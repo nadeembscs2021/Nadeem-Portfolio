@@ -3,9 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Portfolio | Nadeem Ahmad</title>
-    <link rel="stylesheet" href="style.css" />
+    <title>Nadeem Ahmad | Portfolio</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
       rel="stylesheet"
@@ -14,256 +16,31 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Great+Vibes&display=swap"
       rel="stylesheet"
     />
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
-
-    <style>
-      /* General reset and base styles */
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
-      html {
-        scroll-behavior: smooth; /* Smooth scrolling */
-      }
-
-      body {
-        font-family: "Poppins", sans-serif;
-        background-color: #1a1a2e;
-        color: #fff;
-        line-height: 1.6;
-      }
-
-      h1,
-      h2,
-      h3 {
-        color: #fff;
-      }
-
-      a {
-        text-decoration: none;
-        color: #fff;
-        transition: color 0.3s ease;
-      }
-
-      a:hover {
-        color: #8e44ad;
-      }
-
-      .navbar {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 1rem 2rem;
-        background-color: #0f0f2e;
-        position: sticky;
-        top: 0;
-        z-index: 100;
-        transition: background-color 0.3s ease;
-      }
-
-      .navbar.sticky {
-        background-color: #13133d;
-      }
-      /*  */
-
-/* Logo Styling */
-.logo {
-  font-size: 2.5rem;
-  font-family: "Great Vibes", cursive;
-  color: #8e44ad;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  animation: colorChange 3s infinite alternate, bounce 1s infinite;
-  display: inline-block;
-  transition: transform 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
-}
-
-/* Add a hover effect */
-.logo:hover {
-  transform: scale(1.1); /* Scale up the logo on hover */
-  text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.8); /* Increase shadow on hover */
-}
-
-/* Keyframe Animations */
-@keyframes colorChange {
-  0% { color: #8e44ad; }
-  25% { color: #e67e22; }
-  50% { color: #f1c40f; }
-  75% { color: #2ecc71; }
-  100% { color: #e74c3c; }
-}
-
-@keyframes bounce {
-  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-  40% { transform: translateY(-10px); }
-  60% { transform: translateY(-5px); }
-}
-
-/* Responsive Styles for Tablets and Small Screens */
-@media (max-width: 768px) {
-  .logo {
-    font-size: 2rem; /* Adjust size for smaller screens */
-  }
-}
-
-/* Responsive Styles for Mobile Devices */
-@media (max-width: 576px) {
-  .logo {
-    font-size: 1.5rem; /* Further reduce size for mobile */
-  }
-}
-
-
-      /*  */
-      .nav-links {
-        list-style: none;
-        display: flex;
-        gap: 1.5rem;
-      }
-
-      .hero {
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        padding: 4rem 2rem;
-        background: linear-gradient(135deg, #1d1d3b, #0f0f2e);
-      }
-
-      .hero-content h2 {
-        font-size: 3rem;
-      }
-
-      .hero-content h2 span {
-        color: #8e44ad;
-      }
-
-      .hero-content h3 span {
-        color: #8e44ad;
-      }
-
-      .hero-image img {
-        border-radius: 50%;
-        width: 250px;
-        height: 250px;
-      }
-
-      .btn {
-        background-color: #8e44ad;
-        color: #fff;
-        padding: 10px 20px;
-        border-radius: 5px;
-        transition: background-color 0.3s ease;
-      }
-
-      .btn:hover {
-        background-color: #71368a;
-      }
-
-      /* Looping Animation for Introduction */
-      .loop-text {
-        font-size: 2rem;
-        position: relative;
-        height: 50px;
-        overflow: hidden;
-      }
-
-      .loop-text h3 {
-        position: absolute;
-        animation: loopText 9s infinite;
-        white-space: nowrap;
-      }
-
-      @keyframes loopText {
-        0% {
-          transform: translateY(0);
-        }
-        33% {
-          transform: translateY(-50px);
-        }
-        66% {
-          transform: translateY(-100px);
-        }
-        100% {
-          transform: translateY(-150px);
-        }
-      }
-
-      /* Responsive Design */
-      @media (max-width: 768px) {
-        .hero {
-          flex-direction: column;
-        }
-
-        .hero-content h2 {
-          font-size: 2.5rem;
-        }
-
-        .loop-text {
-          font-size: 1.5rem;
-          height: 40px;
-        }
-
-        .logo {
-          font-size: 2rem;
-        }
-      }
-
-      /* Footer Styles */
-      .footer {
-        background: linear-gradient(135deg, #1d1d3b, #0f0f2e);
-        padding: 3rem 2rem;
-        text-align: center;
-        position: relative;
-      }
-
-      .footer-content {
-        margin-bottom: 2rem;
-      }
-
-      .footer-name {
-        font-family: "Great Vibes", cursive;
-        font-size: 2.5rem;
-        color: #8e44ad;
-        margin-bottom: 1rem;
-      }
-
-      .footer-nav {
-        list-style: none;
-        display: flex;
-        justify-content: center;
-        gap: 2rem;
-        margin-bottom: 2rem;
-      }
-
-      .footer-nav li a {
-        color: #fff;
-        transition: color 0.3s ease;
-      }
-
-      .footer-nav li a:hover {
-        color: #8e44ad;
-      }
-
-      .footer-bottom {
-        margin-top: 2rem;
-        font-size: 0.9rem;
-        color: #ccc;
-      }
-    </style>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <!-- Navbar -->
     <nav class="navbar">
-      <h1 class="logo">Nadeem Ahmad</h1>
+      <div class="logo">
+        <a href="#" class="name"><span class="n">N</span>adeem</a>
+      </div>
+      <!-- <h1 class="logo">Nadeem Ahmad</h1> -->
       <ul class="nav-links">
-        <li><a href="#projects">Home</a></li>
+        <li><a href="#home">Home</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#experience">Experience</a></li>
         <li><a href="#education">Education</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
+      <div class="menu-toggle">
+        <!-- Hamburger Menu for Mobile -->
+        <i class="fas fa-bars"></i>
+      </div>
     </nav>
 
     <!-- Home Section -->
@@ -272,26 +49,44 @@
         <div class="text-1">Hi, my name is</div>
         <div class="text-2">Nadeem Ahmad</div>
         <div class="text-3">& I'm a <span class="typing"></span></div>
-        <a href="https://wa.link/w19s6z">Hire me</a>
+        <a href="https://wa.link/w19s6z" class="btn">Hire me</a>
       </div>
       <div class="profile-image">
         <img src="Profile.jpg" alt="Profile Image" />
       </div>
     </section>
 
-    <!-- Hero / About Section -->
-    <section id="about" class="hero fade-in">
-      <div class="hero-content">
-        <h1>About Me</h1>
-        <p>
-          I am a dedicated and enthusiastic beginner-level programmer with a
-          passion for learning and problem-solving. Proficient in foundational
-          programming languages such as C++, HTML, CSS, JavaScript, with a
-          strong understanding of fundamental programming concepts. I create
-          visually appealing and user-friendly websites, focusing on building
-          responsive and dynamic web interfaces that enhance user experience.
-        </p>
-        <a href="𝗡𝗮𝗱𝗲𝗲𝗺-𝗔𝗵𝗺𝗮𝗱-𝗖𝗩✍️📚.pdf" class="btn">Check Resume</a>
+    <!-- About Section -->
+    <section class="about" id="about">
+      <div class="title reveal">
+        <h2 class="section-title">About</h2>
+      </div>
+      <div class="content">
+        <!-- Left Column (Image) -->
+        <div class="column col-left reveal">
+          <div class="img-card">
+            <img src="Profile.jpg" alt="Profile Image" />
+          </div>
+        </div>
+        <!-- Right Column (Text) -->
+        <div class="column col-right reveal">
+          <p class="paragraph-text">
+            I am dedicated and enthusiastic beginner-level programmer with a
+            passion for learning and problem solving. Proficient in foundational
+            programming languages such as c++, html, css or javascript with a
+            strong understanding of fundamental programming concepts including
+            variables, loops, functions, and data structures. I specialize in
+            creating visually appealing and user-friendly websites, with a focus
+            on building responsive and dynamic web interfaces that enhance the
+            user experience.
+            <br /><br />
+            Additionally, I have a basic knowledge of AI technology, which I
+            leverage to explore innovative solutions. I thrive on working on
+            real-time projects and enjoy pushing the boundaries of front-end
+            development to deliver creative and effective web solutions.
+          </p>
+          <a href="𝗡𝗮𝗱𝗲𝗲𝗺-𝗔𝗵𝗺𝗮𝗱-𝗖𝗩✍️📚.pdf" class="btn">Check Resume</a>
+        </div>
       </div>
     </section>
 
@@ -350,137 +145,150 @@
     </section>
 
     <!-- Experience Section -->
-    <section id="experience">
-      <h2>My Experience</h2>
-      <div class="timeline">
+    <section class="experience" id="experience">
+      <div class="title reveal">
+        <h2 class="section-title">Experience</h2>
+        <p>
+          Below is a detailed account of my professional experience in both
+          front-end and back-end development.
+        </p>
+      </div>
+      <div class="content">
         <!-- Front-End Developer Experience -->
-        <div class="timeline-item">
+        <div class="card reveal">
           <h3>Front-End Developer</h3>
           <p>
             As a Front-End Web Developer, I specialize in creating user-centric,
             responsive, and high-performance web interfaces using HTML, CSS,
             JavaScript, and React.js. My focus is on delivering intuitive and
             seamless web experiences that work flawlessly across various devices
-            and browsers. I am proficient in HTML, CSS, JavaScript, and
-            React.js, with a strong foundation in front-end development
-            principles. I have a deep understanding of essential web
-            technologies and best practices, which I apply to build visually
-            appealing, efficient, and accessible interfaces. I am committed to
-            writing clean, efficient, and well-documented code that adheres to
-            modern web standards. My expertise includes optimizing web assets
-            and code for speed and scalability through techniques such as
-            minification, compression, and caching. I have a keen eye for detail
-            and a methodical approach to testing and debugging front-end code. I
-            ensure cross-browser compatibility and adherence to accessibility
-            standards, creating inclusive web experiences for all users.
-            Collaboration is at the heart of my work.
+            and browsers.
+          </p>
+          <p>
+            I am proficient in HTML, CSS, JavaScript, and React.js, with a
+            strong foundation in front-end development principles. I have a deep
+            understanding of essential web technologies and best practices,
+            which I apply to build visually appealing, efficient, and accessible
+            interfaces.
+          </p>
+          <p>
+            My expertise includes optimizing web assets and code for speed and
+            scalability through techniques such as minification, compression,
+            and caching.
           </p>
         </div>
 
         <!-- Back-End Developer Experience -->
-        <div class="timeline-item">
+        <div class="card reveal">
           <h3>Back-End Developer</h3>
           <p>
             I work closely with designers to translate UI/UX designs into
             functional, interactive interfaces. I also collaborate with back-end
             developers to ensure seamless integration of front-end and back-end
-            components, delivering cohesive and functional web applications. As
-            a dedicated front-end developer, I am eager to contribute my skills
-            to dynamic teams and continue expanding my expertise in front-end
-            technologies, all while delivering top-notch web solutions. As a
-            front-end developer, I specialize in creating user-friendly and
+            components, delivering cohesive and functional web applications.
+          </p>
+          <p>
+            As a front-end developer, I specialize in creating user-friendly and
             responsive web pages using HTML, CSS, and JavaScript. I focus on
             delivering intuitive and seamless web experiences that work
-            flawlessly across all devices. As a back-end developer, I work with
-            Node.js, Express, and MongoDB to build server-side logic and
-            database interactions for dynamic web applications.
+            flawlessly across all devices.
+          </p>
+          <p>
+            As a back-end developer, I work with Node.js, Express, and MongoDB
+            to build server-side logic and database interactions for dynamic web
+            applications.
           </p>
         </div>
       </div>
     </section>
 
     <!-- Education Section -->
-    <!-- Education Section -->
-    <section id="education">
-      <h2>Education</h2>
-      <p class="education-description">
-        My education has been a journey of self-discovery and growth. My
-        educational details are as follows.
-      </p>
+    <section id="education" class="education-section">
+      <div class="container">
+        <!-- Section Title -->
+        <h2 class="section-title">Education</h2>
+        <p class="education-description">
+          My education has provided me with a strong foundation in computer
+          science and engineering principles. Here is a summary of my education
+          journey.
+        </p>
 
-      <div class="education-timeline">
-        <!-- University Section -->
-        <div class="education-card">
-          <div class="education-logo">
-            <img src="Uom-icon.png" alt="University of Malakand Logo" />
+        <div class="education-timeline">
+          <!-- University of Malakand -->
+          <div class="education-card">
+            <div class="education-logo">
+              <img src="Uom-icon.png" alt="University of Malakand Logo" />
+            </div>
+            <div class="education-details">
+              <h3>University of Malakand</h3>
+              <p>
+                <strong>Educational Domain:</strong> Bachelor of science in
+                computer science
+              </p>
+              <p>
+                <strong>Duration:</strong> | September 2021 - September 2025
+              </p>
+              <p><strong>Grade:</strong> 3.35 CGPA</p>
+              <p>
+                I am currently engaged in my studies at
+                <b>Govt Postgraduate College Timergara</b>, where I am building
+                a robust foundation in computer science principles, programming
+                languages, and problem-solving skills.
+              </p>
+            </div>
           </div>
-          <div class="education-details">
-            <h3>University of Malakand</h3>
-            <p>
-              <strong>Bachelor of Computer Science</strong> | Sep 2021 - Sep
-              2025
-            </p>
-            <p><strong>Grade:</strong> 3.35 CGPA</p>
-            <p>
-              I am currently engaged in my studies at the University of
-              Malakand, building a robust foundation in computer science
-              principles, programming languages, and problem-solving skills.
-            </p>
-          </div>
-        </div>
 
-        <!-- College Section -->
-        <div class="education-card">
-          <div class="education-logo">
-            <img
-              src="GPGC-icon.jpg"
-              alt="Government Postgraduate College Logo"
-            />
-          </div>
-          <div class="education-details">
-            <h3>Govt Postgraduate College Timergara</h3>
-            <p><strong>Pre-Engineering (XII)</strong> | Sep 2019 - Jul 2021</p>
-            <p><strong>Grade:</strong> 73%</p>
-            <p>
-              I successfully completed my FSc in Pre-Engineering, showcasing my
-              dedication to academic excellence and a strong grounding in
-              engineering principles.
-            </p>
-          </div>
-        </div>
+          <!-- Govt Postgraduate College Timergara -->
+          <div class="education-card">
+            <div class="education-logo">
+              <img src="GPGC-icon.jpg" alt="Govt Postgraduate College Logo" />
+            </div>
+            <div class="education-details">
+              <h3>Govt Postgraduate College Timergara</h3>
+              <p><strong>Educational Domain:</strong> Pre-Engineering (XII)</p>
+              <p><strong>Duration:</strong> | September 2019 - July 2021</p>
 
-        <!-- School Section -->
-        <div class="education-card">
-          <div class="education-logo">
-            <img
-              src="Govt_HSTS-icon.jpeg"
-              alt="Govt High School Takora Sheikhan Logo"
-            />
+              <p><strong>Grade:</strong> 73%</p>
+              <p>
+                I have successfully completed my FSc in Pre-Engineering at
+                <b>Government Postgraduate College Timergara</b>, showcasing my
+                dedication to academic excellence and a strong grounding in
+                engineering principles.
+              </p>
+            </div>
           </div>
-          <div class="education-details">
-            <h3>Govt High School (TKS)</h3>
-            <p><strong>Matric in Science</strong> | Apr 2016 - Apr 2018</p>
-            <p><strong>Grade:</strong> 85%</p>
-            <p>
-              I completed my matriculation from Govt High School, establishing a
-              solid academic base that has been instrumental in supporting my
-              subsequent educational endeavors.
-            </p>
+
+          <!-- Govt High School Takora Sheikhan -->
+          <div class="education-card">
+            <div class="education-logo">
+              <img
+                src="Govt_HSTS-icon.jpeg"
+                alt="Govt High School Takora Sheikhan Logo"
+              />
+            </div>
+            <div class="education-details">
+              <h3>Govt High School (TKS)</h3>
+              <p><strong>Educational Domain:</strong> Matric in Science</p>
+              <p><strong>Duration:</strong> | Apr 2016 - Apr 2018</p>
+              <p><strong>Grade:</strong> 85%</p>
+              <p>
+                I have successfully finished my Matriculation from our village
+                <b>Government High School Takora Sheikhan</b>, I established a solid
+                academic base that has been instrumental in supporting my
+                subsequent educational endeavors.
+              </p>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="contact fade-in">
+    <section class="contact-section" id="contact">
       <h2>Contact</h2>
       <p>Feel free to reach out to me for any questions or opportunities!</p>
       <div class="contact-container">
-        <form
-          action="mailto:nadeemahmed7793@gmail.com"
-          method="POST"
-          class="contact-form"
-        >
+        <form action="#" method="POST" class="contact-form">
           <label>Email Me</label>
           <input type="email" name="email" placeholder="Your Email" required />
           <input type="text" name="name" placeholder="Your Name" required />
@@ -493,98 +301,73 @@
 
     <!-- Footer Section -->
     <footer class="footer">
-      <!-- Social Media Icons and Name in the Center -->
-      <div class="footer-content">
-        <h2 class="footer-name">Nadeem Ahmad</h2>
+      <h2>Nadeem Ahmad</h2>
 
-        <ul class="footer-nav">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#experience">Experience</a></li>
-          <li><a href="#education">Education</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
+      <ul class="footer-nav">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
 
-        <!-- Social Media Links -->
-        <div class="social-icons">
-          <!--  -->
-          <a
-            href="https://www.facebook.com/profile.php?id=100071757684762&mibextid=ZbWKwL"
-            target="_blank"
-            aria-label="Facebook"
-            ><i class="fab fa-facebook-f"
-              ><img
-                src="Facebook.jpg"
-                height="20px"
-                width="20px"
-                alt="Facebook" /></i
-          ></a>
-          <a
-            href="https://x.com/NadeemKhan_2021?t=ZexRV3G3pyLRBDQ13W9UUg&s=09"
-            target="_blank"
-            aria-label="Twitter"
-            ><i class="fab fa-twitter"
-              ><img
-                src="Twitter.jpg"
-                alt="Twitter"
-                height="20px"
-                width="20px" /></i
-          ></a>
-          <a
-            href="https://www.linkedin.com/in/nadeem-khan-529b4326a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
-            target="_blank"
-            aria-label="LinkedIn"
-            ><i class="fab fa-linkedin-in"
-              ><img
-                src="linkedin_icon.png"
-                alt="LinkedIn"
-                height="20px"
-                width="20px" /></i
-          ></a>
-          <a
-            href="https://www.instagram.com/nadeem_khan.2021/profilecard/?igsh=MjQ5aGYxZjFjbmRp"
-            target="_blank"
-            aria-label="Instagram"
-            ><i class="fab fa-instagram"
-              ><img
-                src="Instagram.jpg"
-                alt="Instagram"
-                height="20px"
-                width="20px" /></i
-          ></a>
-          <a
-            href="https://github.com/nadeembscs2021"
-            target="_blank"
-            aria-label="GitHub"
-            ><i class="fab fa-github"
-              ><img
-                src="github-icon.png"
-                alt="GitHub"
-                height="20px"
-                width="20px" /></i
-          ></a>
-          <a href="https://wa.link/w19s6z" target="_blank" aria-label="Whatsapp"
-            ><i class="fab fa-whatsapp"
-              ><img
-                src="Whatsapp.jpg"
-                alt="Whatsapp"
-                height="20px"
-                width="20px" /></i
-          ></a>
-        </div>
+      <!-- Social Media Links -->
+      <div class="social-icons">
+        <!-- Facebook: -->
+        <a
+          href="https://www.facebook.com/profile.php?id=100071757684762&mibextid=ZbWKwL"
+          target="_blank"
+          aria-label="Facebook"
+          ><i class="fab fa-facebook-f"></i
+        ></a>
+        <!-- Instagram:  -->
+        <a
+          href="https://www.instagram.com/nadeem_khan.2021/profilecard/?igsh=MjQ5aGYxZjFjbmRp"
+          target="_blank"
+          aria-label="Instagram"
+          ><i class="fab fa-instagram"></i
+        ></a>
+        <!-- Twitter:  -->
+        <a
+          href="https://x.com/NadeemKhan_2021?t=ZexRV3G3pyLRBDQ13W9UUg&s=09"
+          target="_blank"
+          aria-label="Twitter"
+          ><i class="fab fa-twitter"></i
+        ></a>
+        <!-- LinkedIn:  -->
+        <a
+          href="https://www.linkedin.com/in/nadeem-khan-529b4326a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+          target="_blank"
+          aria-label="LinkedIn"
+          ><i class="fab fa-linkedin-in"></i
+        ></a>
+        <!-- GitHub:  -->
+        <a
+          href="https://github.com/nadeembscs2021"
+          target="_blank"
+          aria-label="GitHub"
+          ><i class="fab fa-github"></i
+        ></a>
+        <!-- Whatsapp:  -->
+        <a href="https://wa.link/w19s6z" target="_blank" aria-label="Whatsapp"
+          ><i class="fab fa-whatsapp"></i
+        ></a>
       </div>
 
-      <!-- Copyright -->
       <div class="footer-bottom">
         <p>&copy; 2024 Nadeem Ahmad. All rights reserved.</p>
       </div>
     </footer>
 
+    <!-- Scroll-to-top button -->
+    <div class="scrollToTop-btn" id="scrollToTopBtn">
+      <i class="fas fa-arrow-up"></i>
+    </div>
+
     <!-- Font Awesome for social icons -->
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
