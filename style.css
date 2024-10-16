@@ -22,6 +22,7 @@ h3 {
   color: #fff;
 }
 
+
 a {
   text-decoration: none;
   color: #fff;
@@ -110,6 +111,42 @@ a:hover {
 
 }
 
+
+/* Hide nav links on mobile by default */
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    flex-direction: column;
+    display: none;
+    position: absolute;
+    top: 60px; /* Adjust according to navbar height */
+    left: 0;
+    width: 100%;
+    background-color: #0f0f2e;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}
+
+/* Hamburger Menu */
+.menu-toggle {
+  display: none;
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
+}
+
 /*  */
 .nav-links {
   list-style: none;
@@ -140,6 +177,25 @@ a:hover {
 .menu-toggle.active i {
   color: #8e44ad;
 }
+
+@media (max-width: 768px) {
+  .nav-links {
+    transform: translateY(-100%);
+    transition: transform 0.5s ease;
+  }
+
+  .nav-links.active {
+    transform: translateY(0);
+  }
+  
+  /* Toggle animation for the menu button */
+  .menu-toggle.active i {
+    color: #8e44ad;
+    transform: rotate(90deg);
+    transition: transform 0.3s ease;
+  }
+}
+
 
 /* Responsive Navbar */
 @media (max-width: 768px) {
@@ -175,6 +231,24 @@ a:hover {
   justify-content: space-between;
   padding: 0 50px;
   background-color: #1a1a2e;
+  flex-direction: row; /* Ensure row layout on both mobile and desktop */
+}
+
+
+@media (max-width: 768px) {
+  .home {
+    flex-direction: row; /* Keep row layout on mobile */
+    justify-content: space-evenly;
+  }
+
+  .home .home-content {
+    text-align: left; /* Align text to left on mobile */
+  }
+
+  .profile-image img {
+    width: 200px; /* Reduce image size for smaller screens */
+    height: 200px;
+  }
 }
 
 .home .home-content {
@@ -189,7 +263,7 @@ a:hover {
 }
 
 .home .home-content .text-2 {
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: 700;
   color: #ffffff;
   animation: fadeInUp 2s ease-in-out;
@@ -307,9 +381,7 @@ body {
   line-height: 1.6;
 }
 
-h1,
-h2,
-h3 {
+h1, h2, h3 {
   color: #fff;
 }
 
@@ -328,130 +400,128 @@ a:hover {
   padding: 4rem 2rem;
   background: linear-gradient(135deg, #1d1d3b, #0f0f2e);
   min-height: 100vh;
-}
-
-.section-title {
-  font-size: 1rem;
-  text-align: center;
-  margin-bottom: 3rem;
-}
-
-.content {
   display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-
-.col-left,
-.col-right {
-  flex: 1;
-  position: relative;
-  margin: 1rem;
-}
-
-.col-left {
-  max-width: 45%;
-}
-
-.col-right {
-  max-width: 50%;
-}
-
-.img-card {
-  position: relative;
-  width: 100%;
-  min-height: 450px;
-  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.img-card img {
-  width: 300px;
-  height: 300px;
-  border-radius: 50%;
+.section-title {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #fff;
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* Card Layout */
+.about-card {
+  background-color: #0f0f2e;
+  border-radius: 20px;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.5);
+  padding: 2rem;
+  max-width: 900px;
+  width: 100%;
+  text-align: center;
+  animation: fadeInUp 1.5s ease;
+  border: 3px solid transparent;
+  position: relative;
+  transition: border 0.5s ease;
+  border: 2px solid #8e44ad;
+}
+
+.about-card:hover {
   border: 3px solid #8e44ad;
-  object-fit: cover;
-  transition: transform 0.3s, box-shadow 0.3s;
-  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
+  display: inline-block;
+  position: relative;
+  padding: 20px;
+  background-color: #1a1a2e;
+  color: #fff;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
 }
 
-.img-card img:hover {
-  transform: scale(1.1);
-  box-shadow: 0px 6px 30px rgba(0, 0, 0, 0.7);
+.card-content {
+  text-align: center;
 }
 
-.content-title {
-  font-size: 2.5rem;
-  font-weight: 800;
-  margin-bottom: 20px;
-}
-
-.paragraph-text {
+.card-content .paragraph-text {
   font-size: 1.1rem;
   line-height: 1.8;
   margin-bottom: 1.5rem;
+  color: #ccc;
 }
 
+/* Button Style - Outside Card */
 .btn {
   background-color: #8e44ad;
   color: #fff;
   padding: 12px 24px;
   border-radius: 5px;
   font-size: 1rem;
-  transition: background-color 0.3s ease;
-  display: inline-block;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  margin-top: 1.5rem;
 }
 
 .btn:hover {
   background-color: #71368a;
-  color: white;
+  color: #fff;
+  transform: scale(1.05);
+
 }
 
 /* Responsive Styling */
 @media (max-width: 768px) {
-  .content {
-    flex-direction: column;
-    text-align: center;
+  .about {
+    padding: 3rem 1rem;
   }
 
-  .col-left,
-  .col-right {
-    max-width: 100%;
+  .about-card {
+    padding: 1.5rem;
+    max-width: 90%;
   }
 
-  .col-left {
-    margin-bottom: 2rem;
-  }
-
-  .content-title {
-    font-size: 2rem;
+  .section-title {
+    font-size: 1.8rem;
   }
 
   .paragraph-text {
     font-size: 1rem;
   }
-
-  .img-card img {
-    width: 250px;
-    height: 250px;
-  }
 }
 
 @media (max-width: 480px) {
-  .img-card img {
-    width: 200px;
-    height: 200px;
-  }
-
-  .content-title {
-    font-size: 1.8rem;
+  .section-title {
+    font-size: 1.5rem;
   }
 
   .paragraph-text {
     font-size: 0.9rem;
   }
 }
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
 
 /* Skills styling:  */
 
@@ -489,6 +559,7 @@ a:hover {
   width: 90%;
   max-width: 600px;
   transition: transform 0.3s ease;
+  border: 2px solid #8e44ad;
 }
 
 .skills-group h3 {
@@ -590,6 +661,7 @@ a:hover {
   box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   text-align: left;
+  border: 2px solid #8e44ad;
 }
 
 .experience .content .card:hover {
@@ -700,6 +772,7 @@ a:hover {
   max-width: 800px;
   width: 100%;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 2px solid #8e44ad;
 }
 
 .education-card:hover {
@@ -845,6 +918,7 @@ a {
   max-width: 500px;
   width: 100%;
   animation: fadeIn 1.5s ease-in-out;
+  border: 2px solid #8e44ad;
 }
 
 .contact-form label {
@@ -959,15 +1033,16 @@ a {
 .scrollToTop-btn {
   position: fixed;
   bottom: 30px;
-  right: 30px;
-  width: 45px;
-  height: 45px;
-  background: #3a6cf4;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+  /* background: #3a6cf4; */
+  background-color: gray;
   color: #fff;
   border-radius: 50%;
   text-align: center;
-  line-height: 45px;
-  font-size: 22px;
+  line-height: 30px;
+  font-size: 15px;
   cursor: pointer;
   display: none;
   transition: all 0.3s ease;
