@@ -22,6 +22,7 @@ menuToggle.addEventListener('click', () => {
     navLinks.classList.toggle('active');
     menuToggle.classList.toggle('active');
 });
+// 
 
 // Smooth Scrolling for Navigation Links
 document.querySelectorAll('.nav-links a').forEach(link => {
