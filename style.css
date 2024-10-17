@@ -223,82 +223,92 @@ a:hover {
   }
 }
 
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 /* Home Section */
 .home {
   height: 100vh;
   display: flex;
+  justify-content: center;
   align-items: center;
-  justify-content: space-between;
-  padding: 0 50px;
   background-color: #1a1a2e;
-  flex-direction: row; /* Ensure row layout on both mobile and desktop */
 }
 
-
-@media (max-width: 768px) {
-  .home {
-    flex-direction: row; /* Keep row layout on mobile */
-    justify-content: space-evenly;
-  }
-
-  .home .home-content {
-    text-align: left; /* Align text to left on mobile */
-  }
-
-  .profile-image img {
-    width: 200px; /* Reduce image size for smaller screens */
-    height: 200px;
-  }
+.home-card {
+  display: flex;
+  flex-direction: row;
+  background-color: #1a1a2e;
+  border-radius: 15px;
+  padding: 100px;
+  margin-bottom: 50;
+  width: 900px;
+  height: 400px;
+  /* max-width: 1100px; */
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease-in-out;
+  animation: fadeInUp 1.5s ease-in-out;
 }
 
+.home-card:hover {
+  transform: scale(1.03);
+}
+
+/* Home Content */
 .home .home-content {
-  max-width: 600px;
+  max-width: 500px;
   color: #ffffff;
 }
 
 .home .home-content .text-1 {
-  font-size: 1.8rem;
-  color: #ffffff;
-  animation: fadeIn 1.5s ease-in-out;
+  font-size: 1rem;
+  animation: fadeInLeft 1.5s ease-in-out;
 }
 
 .home .home-content .text-2 {
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 700;
+  margin-top: 10px;
   color: #ffffff;
-  animation: fadeInUp 2s ease-in-out;
+  animation: fadeInRight 2s ease-in-out;
 }
 
 .home .home-content .text-3 {
-  font-size: 2.2rem;
+  font-size: 1rem;
   margin: 10px 0;
-  animation: fadeInRight 2.5s ease-in-out;
-}
-
-.home .home-content .text-3 span {
   color: #8e44ad;
+  animation: fadeInUp 2.5s ease-in-out;
 }
 
+/* Hire Me Button */
 .home .home-content .btn {
   display: inline-block;
-  margin-top: 25px;
-  padding: 14px 35px;
+  padding: 10px 30px;
+  margin-top: 20px;
   background-color: #8e44ad;
-  color: #fff;
-  border-radius: 50px;
-  font-weight: 600;
-  transition: background 0.3s, transform 0.3s;
+  color: white;
+  font-weight: bold;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.3s, transform 0.3s;
 }
 
 .home .home-content .btn:hover {
-  transform: scale(1.05);
   background-color: #71368a;
+  transform: scale(1.05);
 }
 
+/* Profile Image */
 .profile-image img {
+  width: 200px;
+  height: 200px;
   border-radius: 50%;
-  width: 300px;
-  height: 300px;
   border: 3px solid #8e44ad;
   transition: transform 0.3s, box-shadow 0.3s;
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
@@ -306,66 +316,62 @@ a:hover {
 
 .profile-image:hover img {
   transform: scale(1.05);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.2);
 }
 
-/* Responsive Design for Home Section */
+/* Media Query for Mobile */
 @media (max-width: 768px) {
-  .home {
+  .home-card {
     flex-direction: column;
+    padding: 20px;
     text-align: center;
-    padding: 4rem 2rem;
-  }
-
-  .home-content {
-    margin-bottom: 2rem;
   }
 
   .profile-image img {
+    width: 220px;
+    height: 220px;
     margin-top: 20px;
-    width: 250px;
-    height: 250px;
   }
 
-  .home-content .text-2 {
-    font-size: 3rem;
+  .home .home-content .text-2 {
+    font-size: 1.8rem;
   }
 }
 
-/* Keyframe Animations */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
-}
-
+/* Animations */
 @keyframes fadeInUp {
   from {
     transform: translateY(20px);
     opacity: 0;
   }
-
   to {
     transform: translateY(0);
     opacity: 1;
   }
 }
 
-@keyframes fadeInRight {
+@keyframes fadeInLeft {
   from {
     transform: translateX(-20px);
     opacity: 0;
   }
-
   to {
     transform: translateX(0);
     opacity: 1;
   }
 }
+
+@keyframes fadeInRight {
+  from {
+    transform: translateX(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
 
 /* General reset and base styles */
 * {
@@ -431,7 +437,7 @@ a:hover {
 }
 
 .about-card:hover {
-  border: 3px solid #8e44ad;
+  border: 2px solid #8e44ad;
   display: inline-block;
   position: relative;
   padding: 20px;
@@ -443,11 +449,11 @@ a:hover {
 }
 
 .card-content {
-  text-align: center;
+  text-align:justify
 }
 
 .card-content .paragraph-text {
-  font-size: 1.1rem;
+  font-size: 1rem;
   line-height: 1.8;
   margin-bottom: 1.5rem;
   color: #ccc;
@@ -457,7 +463,7 @@ a:hover {
 .btn {
   background-color: #8e44ad;
   color: #fff;
-  padding: 12px 24px;
+  padding: 10px 22px;
   border-radius: 5px;
   font-size: 1rem;
   transition: background-color 0.3s ease, transform 0.3s ease;
@@ -539,7 +545,7 @@ a:hover {
 }
 
 .skills p {
-  font-size: 1.2rem;
+  font-size: 1rem;
   margin-bottom: 2rem;
   color: #fff;
 }
@@ -674,6 +680,7 @@ a:hover {
   font-size: 1.3rem;
   color: #fff;
   margin-bottom: 15px;
+  text-align: center;
 }
 
 /* Experience Card Paragraph */
@@ -682,6 +689,7 @@ a:hover {
   line-height: 1.5;
   color: #ccd6f6;
   margin-bottom: 10px;
+  text-align:justify
 }
 
 /* Responsive Adjustments */
@@ -748,7 +756,7 @@ a:hover {
 }
 
 .education-description {
-  font-size: 1.2rem;
+  font-size: 1rem;
   margin-bottom: 2.5rem;
   color: #ccd6f6;
 }
@@ -898,7 +906,7 @@ a {
 }
 
 .contact-section p {
-  font-size: 1.2rem;
+  font-size: 1rem;
   color: #8892b0;
   margin-bottom: 40px;
   animation: fadeIn 1.2s ease-in-out;
