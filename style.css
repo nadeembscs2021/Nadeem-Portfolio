@@ -124,7 +124,8 @@ a:hover {
     flex-direction: column;
     display: none;
     position: absolute;
-    top: 60px; /* Adjust according to navbar height */
+    top: 60px;
+    /* Adjust according to navbar height */
     left: 0;
     width: 100%;
     background-color: #0f0f2e;
@@ -187,7 +188,7 @@ a:hover {
   .nav-links.active {
     transform: translateY(0);
   }
-  
+
   /* Toggle animation for the menu button */
   .menu-toggle.active i {
     color: #8e44ad;
@@ -236,13 +237,13 @@ a:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #1a1a2e;
+  background: linear-gradient(135deg, #1d1d3b, #0f0f2e);
 }
 
 .home-card {
   display: flex;
   flex-direction: row;
-  background-color: #1a1a2e;
+  background-color: #0f0f2e;
   border-radius: 15px;
   padding: 100px;
   margin-bottom: 50;
@@ -254,6 +255,7 @@ a:hover {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
   transition: transform 0.3s ease-in-out;
   animation: fadeInUp 1.5s ease-in-out;
+  border: 2px solid #8e44ad;
 }
 
 .home-card:hover {
@@ -344,6 +346,7 @@ a:hover {
     transform: translateY(20px);
     opacity: 0;
   }
+
   to {
     transform: translateY(0);
     opacity: 1;
@@ -355,6 +358,7 @@ a:hover {
     transform: translateX(-20px);
     opacity: 0;
   }
+
   to {
     transform: translateX(0);
     opacity: 1;
@@ -366,6 +370,7 @@ a:hover {
     transform: translateX(20px);
     opacity: 0;
   }
+
   to {
     transform: translateX(0);
     opacity: 1;
@@ -387,7 +392,9 @@ body {
   line-height: 1.6;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   color: #fff;
 }
 
@@ -449,7 +456,7 @@ a:hover {
 }
 
 .card-content {
-  text-align:center;
+  text-align: center;
 }
 
 .card-content .paragraph-text {
@@ -512,6 +519,7 @@ a:hover {
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
@@ -522,6 +530,7 @@ a:hover {
     transform: translateY(20px);
     opacity: 0;
   }
+
   to {
     transform: translateY(0);
     opacity: 1;
@@ -533,7 +542,7 @@ a:hover {
 
 .skills {
   padding: 3rem 1rem;
-  background-color: #1a1a2e;
+  background: linear-gradient(135deg, #1d1d3b, #0f0f2e);
   text-align: center;
 }
 
@@ -569,7 +578,7 @@ a:hover {
 }
 
 .skills-group h3 {
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   color: #fff;
   margin-bottom: 1rem;
 }
@@ -677,7 +686,7 @@ a:hover {
 
 /* Experience Card Header */
 .experience .content .card h3 {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   color: #fff;
   margin-bottom: 15px;
   text-align: center;
@@ -689,7 +698,7 @@ a:hover {
   line-height: 1.5;
   color: #ccd6f6;
   margin-bottom: 10px;
-  text-align:center;
+  text-align: center;
 }
 
 /* Responsive Adjustments */
@@ -808,9 +817,10 @@ a:hover {
 }
 
 .education-details h3 {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   color: #fff;
   margin-bottom: 10px;
+  text-align: justify;
 }
 
 .education-details p {
@@ -894,7 +904,7 @@ a {
 /* Contact Section */
 .contact-section {
   padding: 80px 20px;
-  background: #0a192f;
+  background: linear-gradient(135deg, #1d1d3b, #0f0f2e);
   text-align: center;
 }
 
@@ -919,7 +929,7 @@ a {
 }
 
 .contact-form {
-  background: #112240;
+  background-color: #0f0f2e;
   padding: 40px;
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
