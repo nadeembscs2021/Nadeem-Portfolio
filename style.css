@@ -449,7 +449,7 @@ a:hover {
 }
 
 .card-content {
-  text-align:justify
+  text-align:center;
 }
 
 .card-content .paragraph-text {
@@ -677,7 +677,7 @@ a:hover {
 
 /* Experience Card Header */
 .experience .content .card h3 {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   color: #fff;
   margin-bottom: 15px;
   text-align: center;
@@ -689,7 +689,7 @@ a:hover {
   line-height: 1.5;
   color: #ccd6f6;
   margin-bottom: 10px;
-  text-align:justify
+  text-align:center;
 }
 
 /* Responsive Adjustments */
@@ -808,7 +808,7 @@ a:hover {
 }
 
 .education-details h3 {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   color: #fff;
   margin-bottom: 10px;
 }
