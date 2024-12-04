@@ -42,8 +42,6 @@ document.querySelectorAll(".nav-links a").forEach((link) => {
   });
 });
 
-//
-
 // Fade-in Animation on Scroll
 const faders = document.querySelectorAll(".reveal");
 
@@ -86,8 +84,9 @@ scrollToTopBtn.addEventListener("click", () => {
 
 //  Contact Form :
 
+// Initialize EmailJS with your User ID
 (function () {
-  emailjs.init("YOUR_USER_ID");
+  emailjs.init("YOUR_USER_ID"); // Replace with your EmailJS user ID
 })();
 
 document
@@ -103,6 +102,7 @@ document
     const message = document.getElementById("message").value.trim();
     let isValid = true;
 
+    // Validation checks
     if (name === "") {
       document.getElementById("nameError").textContent = "Name is required";
       document.getElementById("nameError").style.display = "block";
@@ -132,8 +132,8 @@ document
       isValid = false;
     }
 
+    // If validation passes, send the form data
     if (isValid) {
-      alert("Form submitted successfully!");
       emailjs
         .send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", {
           name: name,
@@ -151,6 +151,7 @@ document
         );
     }
   });
+
 
 
   // Completed: 
