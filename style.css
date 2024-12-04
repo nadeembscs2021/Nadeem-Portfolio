@@ -144,13 +144,6 @@ a:hover {
   cursor: pointer;
 }
 
-/*  */
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 1.5rem;
-}
-
 .nav-links li a {
   font-size: 1rem;
   color: #fff;
@@ -163,18 +156,28 @@ a:hover {
   color: #fff;
 }
 
-/* Hamburger Menu for Mobile */
-.menu-toggle {
-  display: none;
-  font-size: 2rem;
-  color: #fff;
-  cursor: pointer;
-}
-
+/* Hamburger to Cross Icon */
 .menu-toggle.active i {
   color: #8e44ad;
+  transform: rotate(45deg);
+  transition: transform 0.3s ease;
 }
 
+/* Cross Icon (X) when active */
+.menu-toggle.active i:before {
+  content: "\f00d"; /* FontAwesome "X" icon */
+  font-family: "FontAwesome";
+  font-size: 2rem;
+}
+
+/* Hamburger Icon (three lines) when inactive */
+.menu-toggle i:before {
+  content: "\f0c9"; /* FontAwesome "hamburger" icon */
+  font-family: "FontAwesome";
+  font-size: 2rem;
+}
+
+/* Responsive Navbar */
 @media (max-width: 768px) {
   .nav-links {
     transform: translateY(-100%);
@@ -191,10 +194,7 @@ a:hover {
     transform: rotate(90deg);
     transition: transform 0.3s ease;
   }
-}
 
-/* Responsive Navbar */
-@media (max-width: 768px) {
   .nav-links {
     position: absolute;
     top: 100%;
@@ -219,13 +219,6 @@ a:hover {
   }
 }
 
-/* General Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 /* Home Section */
 .home {
   height: 100vh;
@@ -244,13 +237,11 @@ a:hover {
   margin-bottom: 50;
   width: 900px;
   height: 400px;
-  /* max-width: 1100px; */
   justify-content: space-between;
   align-items: center;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
   transition: transform 0.3s ease-in-out;
   animation: fadeInUp 1.5s ease-in-out;
-  /* border: 2px solid #8e44ad; */
 }
 
 .home-card:hover {
@@ -370,36 +361,6 @@ a:hover {
     transform: translateX(0);
     opacity: 1;
   }
-}
-
-/* General reset and base styles */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: "Poppins", sans-serif;
-  background-color: #1a1a2e;
-  color: #fff;
-  line-height: 1.6;
-}
-
-h1,
-h2,
-h3 {
-  color: #fff;
-}
-
-a {
-  text-decoration: none;
-  color: #fff;
-  transition: color 0.3s ease;
-}
-
-a:hover {
-  color: #8e44ad;
 }
 
 /* About Section */
@@ -541,7 +502,6 @@ a:hover {
 .skills h2 {
   font-size: 2.2rem;
   margin-bottom: 1rem;
-  /* color: #fff; */
   color: #8e44ad;
 }
 
@@ -898,6 +858,7 @@ a:hover {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap; /* Ensures it wraps in smaller screens */
 }
 
 .contact-card {
@@ -982,11 +943,19 @@ textarea {
   .contact-section h2 {
     font-size: 2rem;
   }
+
+  .contact-card {
+    padding: 20px; /* Smaller padding for mobile */
+  }
 }
 
 @media (max-width: 576px) {
   .contact-section h2 {
     font-size: 1.8rem;
+  }
+
+  .contact-container {
+    flex-direction: column; /* Stack form elements vertically on small screens */
   }
 }
 
@@ -1060,7 +1029,6 @@ textarea {
   right: 10px;
   width: 30px;
   height: 30px;
-  /* background: #3a6cf4; */
   background-color: gray;
   color: #fff;
   border-radius: 50%;
