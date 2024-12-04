@@ -312,6 +312,8 @@ a:hover {
   .home-card {
     flex-direction: column;
     padding: 20px;
+    margin-bottom: 100px;
+    height: 500px;
     text-align: center;
   }
 
